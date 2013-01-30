@@ -1,0 +1,29 @@
+hangman_game:
+    pattern: /game
+    defaults: { _controller: SensioHangmanBundle:Game:index }
+
+play_letter:
+    pattern: /game/letter/{letter}
+    defaults: { _controller: SensioHangmanBundle:Game:letter }
+    requirements: { letter: "[A-Z]" }
+
+play_word:
+    pattern: /game/word
+    defaults: { _controller: SensioHangmanBundle:Game:word }
+    requirements: { _method: POST }
+
+game_hanged:
+    pattern: /game/hanged
+    defaults: { _controller: SensioHangmanBundle:Game:hanged }
+
+game_won:
+    pattern: /game/won
+    defaults: { _controller: SensioHangmanBundle:Game:won }
+
+reset:
+    pattern: /game/reset
+    defaults: { _controller: SensioHangmanBundle:Game:reset }
+
+signup:
+    pattern:  /signup
+    defaults: { _controller: SensioHangmanBundle:Player:signup }
