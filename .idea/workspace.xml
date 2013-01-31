@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dc43b84f-eb65-4d15-9ad0-f6cc3119eae5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Sensio/Bundle/HangmanBundle/Resources/views/Player/login.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/routing.yml" afterPath="$PROJECT_DIR$/app/config/routing.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/security.yml" afterPath="$PROJECT_DIR$/app/config/security.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sensio/Bundle/HangmanBundle/Controller/PlayerController.php" afterPath="$PROJECT_DIR$/src/Sensio/Bundle/HangmanBundle/Controller/PlayerController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sensio/Bundle/HangmanBundle/Entity/Player.php" afterPath="$PROJECT_DIR$/src/Sensio/Bundle/HangmanBundle/Entity/Player.php" />
     </list>
     <ignored path="Hangman.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -75,7 +70,7 @@
       <file leaf-file-name="security.yml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/config/security.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="45" selection-start="751" selection-end="751" vertical-scroll-proportion="0.45454547">
+            <state line="34" column="56" selection-start="912" selection-end="912" vertical-scroll-proportion="0.5519481">
               <folding />
             </state>
           </provider>
@@ -590,7 +585,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/security.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="45" selection-start="751" selection-end="751" vertical-scroll-proportion="0.45454547">
+        <state line="34" column="56" selection-start="912" selection-end="912" vertical-scroll-proportion="0.5519481">
           <folding />
         </state>
       </provider>
