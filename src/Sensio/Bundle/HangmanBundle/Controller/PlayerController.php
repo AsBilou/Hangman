@@ -18,12 +18,13 @@ class PlayerController extends Controller
             if ($form->isValid()) {
                 $player = $form->getData();
 
-                // get the encoder and encode the password
-                // ...
+                $factory = $this->get('security.encoder_factory');
+                $encoder = $factory->getEncoder($player);
+                $player->encodePassword($encoder);
 
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($player);
-                $em->flush();
+                $em->flush();//commit
 
                 return $this->redirect($this->generateUrl('hangman_game'));
             }

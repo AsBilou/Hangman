@@ -5,8 +5,8 @@ namespace Sensio\Bundle\HangmanBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
-//use Symfony\Component\Security\Core\User\UserInterface;
-//use Symfony\Component\Security\Core\Encoder\PasswordEncoderInterface;
+use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Security\Core\Encoder\PasswordEncoderInterface;
 
 /**
  * Sensio\Bundle\HangmanBundle\Entity\Player
@@ -111,6 +111,15 @@ class Player
     public function getRawPassword()
     {
         return $this->rawPassword;
+    }
+
+    public function encodePassword(PasswordEncoderInterface $encoder){
+        $this->salt = sha1(microtime());
+
+        $this->password = $encoder->encodePassword(
+            $this->rawPassword,
+            $this->salt
+        );
     }
 
     /**
