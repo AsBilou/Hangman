@@ -16,7 +16,7 @@ use Symfony\Component\Security\Core\Encoder\PasswordEncoderInterface;
  * @UniqueEntity(fields = "username", message = "This username is already in use.")
  * @UniqueEntity(fields = "email", message = "This email is already in use.")
  */
-class Player
+class Player implements UserInterface
 {
     /**
      * @var integer $id
@@ -119,6 +119,23 @@ class Player
         $this->password = $encoder->encodePassword(
             $this->rawPassword,
             $this->salt
+        );
+    }
+
+    public function eraseCredentials()
+    {
+        $this->rawPassword = null;
+    }
+
+    public function getRoles()
+    {
+        if($this->isAdmin){
+            return array(
+                'ROLE_ADMIN',
+            );
+        }
+        return array(
+            'ROLE_USER',
         );
     }
 

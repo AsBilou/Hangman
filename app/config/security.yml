@@ -11,19 +11,25 @@ security:
         ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
 
     providers:
-        in_memory:
-            memory:
-                users:
-                    user:  { password: userpass, roles: [ 'ROLE_USER' ] }
-                    admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
+        players:
+            entity:
+                class: SensioHangmanBundle:Player
+                property: username
 
     firewalls:
         dev:
             pattern:  ^/(_(profiler|wdt)|css|images|js)/
             security: false
         game:
-            pattern:    ^/foo
-            http_basic: ~
+            pattern:    ^/
+            anonymous: true
+            form_login:
+                login_path: login
+                check_path: login_check
+                default_target_path: hangman_game
+            logout:
+                path: logout
+                target: login
 
     access_control:
         #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }

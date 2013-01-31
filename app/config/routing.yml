@@ -2,6 +2,20 @@ homepage:
     pattern: /
     defaults: { _controller: SensioHangmanBundle:Player:signup }
 
+login:
+    pattern: /login
+    defaults:
+        _controller: SensioHangmanBundle:player:login
+
+login_check:
+    pattern: /auth
+    requirements:
+        _method: POST
+
+
+logout:
+    pattern: /logout
+
 SensioHangmanBundle:
     resource: "@SensioHangmanBundle/Resources/config/routing.yml"
     prefix: /
